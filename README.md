@@ -1,0 +1,1 @@
+BEUShareBox, kullanıcıların ürün ekleyebildiği, fotoğraf yükleyebildiği veya URL ile paylaşabildiği, beğeni ve yorum yapılabilen basit bir web uygulamasıdır. HTML, CSS ve JavaScript kullanılarak geliştirilmiştir.
