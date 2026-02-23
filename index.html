@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BEUShareBox</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">B</div>
+      <div class="brandText">
+        <div class="brandTitle">BEUShareBox</div>
+        <div class="brandSub">Ürün Paylaşma Sitesi</div>
+      </div>
+    </div>
+
+    <div class="searchWrap">
+      <span class="searchIcon">🔎</span>
+      <input id="searchInput" class="searchInput" placeholder="Ürün ara..." />
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <div class="cardHead">
+        <h2>Ürün Ekle</h2>
+        <div class="hint">Fotoğraf: URL veya Yükle • Ürün Linki: kartta görünür</div>
+      </div>
+
+      <form id="addForm" class="form">
+        <div class="grid">
+          <div class="field">
+            <label>Ürün adı</label>
+            <input id="title" type="text" placeholder="Örn: Bluetooth Kulaklık" required />
+          </div>
+          <div class="field">
+            <label>Fiyat (₺)</label>
+            <input id="price" type="number" step="0.01" placeholder="Örn: 899" required />
+          </div>
+          <div class="field">
+            <label>Kategori</label>
+            <select id="category">
+              <option value="Elektronik">Elektronik</option>
+              <option value="Kitap">Kitap</option>
+              <option value="Giyim">Giyim</option>
+              <option value="Aksesuar">Aksesuar</option>
+              <option value="Diğer">Diğer</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Tarih</label>
+            <input id="date" type="date" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Açıklama</label>
+          <textarea id="description" rows="2" placeholder="Kısa açıklama..."></textarea>
+        </div>
+
+        <div class="grid">
+          <div class="field">
+            <label>Fotoğraf URL</label>
+            <input id="imageUrl" type="text" placeholder="https://... (opsiyonel)" />
+            <div class="small">Geçerliyse foto URL kullanılır.</div>
+          </div>
+          <div class="field">
+            <label>Fotoğraf Yükle</label>
+            <input id="imageFile" type="file" accept="image/*" />
+            <div class="small">URL boşsa dosya Base64 kaydedilir.</div>
+          </div>
+          <div class="field" style="grid-column: span 2;">
+            <label>Ürün URL (Link)</label>
+            <input id="productUrl" type="text" placeholder="https://... (opsiyonel)" />
+            <div class="small">Kartta ürünün altında link olarak görünür.</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">Ekle</button>
+          <button type="button" id="clearAllBtn" class="btn danger">Tümünü Sil</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="cardHead">
+        <h2>Kategoriler</h2>
+      </div>
+      <div id="categoryChips" class="chips"></div>
+    </section>
+
+    <section class="card">
+      <div class="cardHead">
+        <h2>Paylaşımlar</h2>
+      </div>
+      <div id="productsGrid" class="gridCards"></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
